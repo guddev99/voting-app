@@ -1,0 +1,23 @@
+version: "3"
+services:
+  redis:
+    image: redis:alpine
+  
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  
+  vote:
+    build: ./vote
+    ports:
+      - 5000:80
+  
+  result:
+    build: ./result
+    ports:
+      - 5001:80
+  
+  worker:
+    build: ./worker
