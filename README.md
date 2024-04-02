@@ -1,6 +1,6 @@
 # Voting Application
 
-This is the voting application, a simple distributed application running across multiple Docker containers. 
+This is the voting application, a simple distributed application running across multiple Docker containers, which can be deployed using Docker Compose or Kubernetes.
 
 ## Getting Started
 
@@ -69,3 +69,5 @@ The folder k8s-specifications contains the yaml specifications of the Voting App
 Note
 ----
 The voting application only accepts one vote per client. It does not register votes if a vote has already been submitted from a client.
+
+This application is based on the [example-voting-app](https://github.com/dockersamples/example-voting-app) repository from the [dockersamples](https://github.com/dockersamples) GitHub page.
