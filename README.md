@@ -19,13 +19,13 @@ To deploy the application using Docker Compose, make sure you have Docker instal
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/guddev99/votting-app.git
+    git clone https://github.com/guddev99/voting-app.git
     ```
 
 2. Navigate to the cloned directory:
 
     ```bash
-    cd votting-app
+    cd voting-app
     ```
 
 3. Run the following command to start the services:
