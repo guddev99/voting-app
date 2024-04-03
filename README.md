@@ -51,10 +51,27 @@ The folder k8s-specifications contains the yaml specifications of the Voting App
 2. Monitor the deployment until all services are up and running:
 
     ```bash
-    kubectl get pods --watch
+    kubectl get pods
     ```
 
-3. Once all pods are in a `Running` state, the `vote` web app is then available on port 31000 on each host of the cluster, the `result` web app is available on port 31001.
+3. Once all pods are in a `Running` state, you can access the Vote and Result interfaces using the respective services. This assumes that your Kubernetes environment supports LoadBalancer type services, such as GKE (Google Kubernetes Engine), EKS (Amazon Elastic Kubernetes Service), etc. Follow these steps:
+
+    - Find the external IP address of the voting-service by running:
+        ```bash
+        kubectl get svc voting-service
+        ```
+        
+        Then, navigate to the external IP address of the voting-service in your web browser to access the Vote interface.
+
+    - Similarly, find the external IP address of the result-service by running:
+    
+        ```bash
+        kubectl get svc result-service
+        ```
+
+        Then, navigate to the external IP address of the result-service in your web browser to access the Result interface.
+
+    **Note:** If your Kubernetes environment does not support LoadBalancer type services, such as in on-premises or self-hosted environments, you may need to use alternative methods to access the services externally. This could include using NodePort type services, Ingress controllers, or other networking configurations depending on your specific environment setup.
 
 ## Architecture
 

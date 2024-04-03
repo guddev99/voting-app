@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
         - name: result-app
-          image: brsahu/vote-app:v1
+          image: brsahu/result-app:v1
           ports:
             - containerPort: 80
